@@ -1,0 +1,113 @@
+<html>
+
+<head>
+	<title>MapBox Locator</title>
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|Open+Sans:400,600' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/fresh.css" />
+	<link href='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css' rel='stylesheet' />
+	<link rel="stylesheet" href="css/icons/style.css" />
+	<link rel="stylesheet" href="css/locator.css" />
+</head>	
+
+<body>
+
+<!-- Map -->
+<div id="main-container" class="container">
+
+	<div id="error" class="hide">
+		
+	</div>
+
+	<div id="markers" class="col4">
+		
+		<div id="basic-controls">
+			<a href="#" id="add-marker" class="icon-marker button gray small" data-nofollow>Add marker</a>
+			<a href="#" id="show-all" class="button gray small show-all" data-nofollow>Center map</a>
+
+			<div id="map-size">
+				<input type="radio" name="size" id="size-large" checked value="large" data-size="610" />
+				<label for="size-large">Large (610px)</label>
+				<input type="radio" name="size" id="size-small" value="small" data-size="296" />
+				<label for="size-small">Small (296px)</label>
+			</div>
+		</div>
+
+		<div id="adding-marker" class="hide">
+			<p class="info">Click and hold to place a marker on the map.</p>
+			<a href="#" id="cancel-marker" class="button small" data-nofollow>Cancel</a>
+		</div>
+
+		<div id="edit-marker" class="clearfix hide">
+			<h2 class="title">Edit marker</h2>
+
+			<fieldset>
+				<label for="color" class="title">Color</label>
+				<select name="color" id="marker-color">
+					<option value="000000" selected>Black</option>
+					<option value="3178b5">Blue</option>
+					<option value="dc463f">Red</option>
+					<option value="5ea154">Green</option>
+					<option value="f8b44e">Orange</option>
+				</select>
+			</fieldset>
+
+			<fieldset>
+				<label for="icon" class="title">Icon</label>
+				<select name="icon" id="marker-icon">
+					<!-- Markers load here -->
+				</select>
+			</fieldset>
+
+			<fieldset>
+				<label for="marker-content" class="title">Tooltip Content</label>
+				<textarea name="marker-content" id="" rows="3" placeholder="(HTML is allowed)"></textarea>
+			</fieldset>
+
+			<div class="col3">
+				<a href="#" id="delete-marker" class="button red small" data-nofollow>Delete</a>
+			</div>
+			<div class="col8 margin1">
+				<a href="#" id="save-marker" class="button small" data-nofollow>Save</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="col8">
+		<div id="map-wrapper">
+			<div id="map"><!-- Load MapBox Map--></div>
+		</div>
+	</div>
+</div>
+
+<!-- Sharing Options -->
+<div id="save" class="container">
+	<div id="methods" class="col6 margin3">
+		<a href="#" id="generate-image" class="button icon-download" data-nofollow>Image</a>
+		<a href="#" id="generate-embed" class="button icon-embed" data-nofollow>Embed</a>
+	</div>
+</div>
+<div id="share-code" class="container hide">
+	<div class="col6 margin3">
+		<p>Copy and paste the following HTML:</p>
+		<textarea id="generate-result"></textarea>
+	</div>
+</div>
+
+<footer>
+	<p>A Project by <a href="http://mapbox.com">MapBox</a></p>
+</footer>
+
+
+<!-- JS Scripts -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/third-party/underscore-min.js"></script>
+<script src="js/third-party/backbone-min.js"></script>
+<script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.js'></script>
+
+<script src="js/locator.js"></script>
+
+</body>
+
+</html>

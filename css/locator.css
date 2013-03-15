@@ -1,0 +1,288 @@
+
+body {
+	background: #fff;
+	font-family: 'Open Sans', sans-serif;
+}
+
+a {
+	color: rgba(56,135,190,1);
+}
+
+a:hover {
+	color: rgba(59,178,208,1);
+}
+
+label {
+	display: inline;
+}
+
+/* General Selectors */
+
+[class*="icon-"]:before {
+	margin-right: 10px;
+}
+
+#header {
+	background: rgba(60,78,90,1);
+	padding: 10px 20px;
+}
+
+#header .logo {
+	background: transparent url(http://mapbox.com/img/sprite@2x.png) no-repeat 0 -60px;
+	background-size: 840px 300px;
+	display: inline-block;
+	vertical-align: middle;
+	height: 60px;
+	width: 160px;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+
+#header .section-title {
+	font-family: 'Open Sans Condensed',Arial,sans-serif;
+	font-size: 15px;
+	color: #fff;
+	display: inline-block;
+	vertical-align: middle;
+	background: #28353d;
+	padding: 0px 30px;
+	margin: 10px 0px;
+	text-transform: uppercase;
+	border-radius: 4px;
+	height: 40px;
+	line-height: 40px;
+}
+
+footer {
+	color: #888;
+	font-size: 14px;
+	padding: 10px 0;
+	text-align: center;
+}
+
+footer p a {
+	color: #333 !important;
+}
+
+#main-container {
+	background: rgb(238, 238, 238) url(http://mapbox.com/img/dotgrid-black.png) 0 0 repeat;
+	padding: 20px 0;
+	position: relative;
+}
+
+#error {
+	background: #DB453E;
+	color: white;
+	font-family: 'Open Sans Condensed',Arial,sans-serif;
+	margin: -20px 0 20px;
+	padding: 20px 0;
+	text-align: center;
+}
+
+#map-wrapper {
+	margin: 0 auto;
+	width: 610px;
+}
+
+#map {
+
+	background: rgba(232,224,216,1);
+	border: 2px solid white;
+	height: 400px;
+	position: relative;
+	width: 100%;
+	z-index: 1;
+}
+
+#map .marker-popup {
+	font-size: 12px;
+	padding: 5px 10px;
+	max-width: 240px;
+}
+
+#map .marker-popup a {
+	color: #3178b5;
+	font-weight: 600;
+}
+
+#map .marker-popup a:hover {
+	color: black;
+}
+
+#placing {
+  -webkit-animation: placing-animation 0.8s 1 steps(24);
+  background-image: url(../images/placing.png);
+  background-size: 1200px 50px;
+  background-position: 0px 0px;
+  height: 50px;
+  position: absolute;
+  width: 50px;
+  z-index: 10;
+}
+
+.tiny {
+	color: #222;
+	font-size: 12px;
+}
+
+.title {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 18px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+
+/* Buttons */
+a.button {
+	background: rgba(56,135,190,1);
+	color: white;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 18px;
+	padding: 10px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+a.button:hover {
+	background: rgba(59,178,208,1);
+}
+
+a.button.active {
+	box-shadow: inset 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* Gray Button */
+a.button.gray {
+	background: rgba(76,80,81,1);
+}
+a.button.gray:hover {
+	background: rgba(58,62,63,1);
+}
+a.button.active {
+	background: rgba(38,42,43,1) !important;
+}
+
+/* Red Button */
+a.button.red {
+	background: rgba(181,14,63,1);
+}
+a.button.red {
+	background: rgba(212,63,63,1); 
+}
+a.button.red:hover {
+	background: rgba(196,51,51,1); 
+}
+a.button.red:active, a.button.red:active {  
+	background: rgba(175,40,40,1); 
+}
+
+a.button.small {
+	font-size: 16px;
+	padding: 4px;
+}
+
+a.button.toggle {
+	float: left;
+	width: 30px;
+}
+
+/* Controls bar */
+#basic-controls .button {
+	margin-bottom: 20px;
+}
+
+#map-size {
+	background: rgba(256,256,256,0.9);
+	text-align: center;
+	padding: 10px 5px;
+	font-size: 12px;
+}
+
+#map-size label {
+	margin-right: 15px;
+}
+
+/* Markers Editing */
+#markers {
+	padding-left: 20px;
+}
+
+#markers a.button {
+	display: block;
+}
+
+#markers #edit-marker {
+	display: none;
+	background: white;
+	padding: 20px;
+}
+
+#edit-marker h2 {
+	margin-bottom: 10px;
+}
+
+#edit-marker .title {
+	color: #aaa;
+}
+
+#edit-marker label.title {
+	display: block;
+	font-size: 14px;
+	color: #666;
+}
+
+#edit-marker select, textarea {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+#edit-marker textarea {
+	font-size: 14px;
+	outline: none;
+	box-shadow: none;
+	height: 80px;
+	line-height: 20px;
+}
+
+/* Save Bar */
+
+#save, #share-code {
+	background: #F8F8F8;
+	line-height: 50px;
+	padding: 10px 0;
+	/*border-top: 2px solid #EEEEEE;*/
+}
+
+#save .title {
+	color: #aaa;
+	line-height: 50px;
+}
+
+#save #methods .button {
+	display: inline-block;
+	margin: 0 2.3%;
+	padding: 0px;
+	width: 45%;
+}
+
+#share-code {
+}
+
+#share-code p {
+	font-size: 12px;
+	margin: 0;
+}
+
+#share-code textarea {
+	color: #666;
+	height: 80px;
+	width: 100%;
+}
+
+/* Animations */
+
+@-webkit-keyframes placing-animation {
+  0%      { background-position: 0px 0px; }
+  100% {    background-position: -2400px 0px; }
+}
