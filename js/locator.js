@@ -74,14 +74,8 @@ var maki = ['','circle', 'circle-stroked', 'square', 'square-stroked', 'triangle
       this.model.on('change:mapWidth', this.changeMapSize);
       this.model.on('change:activeMarker', this.toggleEditScreen);
 
-      var mapId = getURLParameter('mapid').replace("/","");
-
-      if(mapId === 'null') {
-        this.showError('<strong>Missing MapBox Map ID in URL.</strong><br/>Ex: ' + window.location.pathname + '?mapid=examples.map-vyofok3q');
-        return false;
-      } else {
-        this.model.set('mapId', mapId);
-      }
+      // Insert your Map ID here
+      var mapId = $('#map').data('id');
 
       this.model.set('coords',{
         lat: '38.91',
@@ -129,11 +123,10 @@ var maki = ['','circle', 'circle-stroked', 'square', 'square-stroked', 'triangle
 
     changeMapSize: function() {
       var width = this.model.get('mapWidth'),
-          coords = this.model.get('coords'),
-          $wrapper = $('#map-wrapper');
+          coords = this.model.get('coords');
 
-      $wrapper.css('width',width + 'px');
-      this.map.dimensions.x = $wrapper.width();
+      // $wrapper.css('width',width + 'px');
+      this.map.dimensions.x = width;
       this.map.draw();
     },
 

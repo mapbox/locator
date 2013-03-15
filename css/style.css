@@ -1,0 +1,355 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+    }
+body {
+	line-height: 1;
+    }
+ol, ul {
+	list-style: none;
+    }
+blockquote, q {
+	quotes: none;
+    }
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+    }
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+    }
+
+
+/* apply a natural box layout model to all elements */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+.clearfix:after {
+	content:'.';
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+}
+
+/* Typography */
+
+body,
+input,
+textarea {
+    font: 16px/24px 'DroidSerifRegular', sans-serif;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    }
+
+pre,
+code { font:normal 12px/20px monospace; }
+    
+h1, h2 {
+    font: .75em/1em 'DroidSansBold', sans-serif;
+    text-transform: uppercase;
+    }
+
+a {
+    color:#369;
+    text-decoration:none;
+    }
+
+/* Layout */
+
+h1,h2 {
+    padding: 20px 0;
+    text-align: center;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+body > div {
+    position: relative;
+    z-index: 1;
+}
+    
+body {
+	background: #fff;
+	font-family: 'Open Sans', sans-serif;
+}
+
+a {
+	color: rgba(56,135,190,1);
+}
+
+a:hover {
+	color: rgba(59,178,208,1);
+}
+
+/* General Selectors */
+
+[class*="icon-"]:before {
+	margin-right: 10px;
+}
+
+#placing {
+	-webkit-animation: placing-animation 0.8s 1 steps(24);
+	background-image: url(../images/placing.png);
+	background-size: 1200px 50px;
+	background-position: 0px 0px;
+	height: 50px;
+	position: absolute;
+	width: 50px;
+	z-index: 10;
+}
+
+.hide {
+	display: none;
+}
+
+
+.tiny {
+	color: #222;
+	font-size: 12px;
+}
+
+.title {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 18px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+/* Buttons */
+
+a.button {
+	background: rgba(56,135,190,1);
+	color: white;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 18px;
+	padding: 15px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+a.button:hover {
+	background: rgba(59,178,208,1);
+}
+
+a.button.active {
+	box-shadow: inset 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* Gray Button */
+
+a.button.gray {
+	background: rgba(76,80,81,1);
+}
+a.button.gray:hover {
+	background: rgba(58,62,63,1);
+}
+a.button.active {
+	background: rgba(38,42,43,1) !important;
+}
+
+/* Red Button */
+
+a.button.red {
+	background: rgba(181,14,63,1);
+}
+a.button.red {
+	background: rgba(212,63,63,1); 
+}
+a.button.red:hover {
+	background: rgba(196,51,51,1); 
+}
+a.button.red:active, a.button.red:active {  
+	background: rgba(175,40,40,1); 
+}
+
+/* Sections */
+
+#header {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 320px;
+    height: 50px;	
+    background: #444;
+    color: white;
+	z-index: 2;
+}
+
+#header h1 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+}
+
+#error {
+	background: #DB453E;
+	color: white;
+	font-family: 'Open Sans Condensed',Arial,sans-serif;
+	margin: -20px 0 20px;
+	padding: 20px 0;
+	text-align: center;
+}
+
+#content {
+	position: absolute;
+	top: 50px;
+	right: 0px;
+	bottom: 0px;
+	padding: 0;
+	width: 320px;
+	background: rgb(255,255,255); /* old IE */
+	background: rgba(255,255,255,.9);
+	overflow-x: auto;
+	z-index: 2;
+}
+
+#content a.button.block {
+	display: block;
+	margin-bottom: 20px;
+}
+
+/* Map Styles */
+
+.map {
+	background: rgba(232,224,216,1);
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	z-index: 0;
+}
+
+#map .marker-popup {
+	font-size: 12px;
+	padding: 5px 10px;
+	max-width: 240px;
+}
+
+#map .marker-popup a {
+	color: #3178b5;
+	font-weight: 600;
+}
+
+#map .marker-popup a:hover {
+	color: black;
+}
+
+/* Controls bar */
+
+#map-size {
+	background: rgba(256,256,256,0.9);
+	text-align: center;
+	padding: 10px 5px;
+	font-size: 12px;
+}
+
+#map-size label {
+	margin-right: 15px;
+}
+
+/* Markers Editing */
+#markers {
+	padding: 20px;
+}
+
+#markers #edit-marker {
+	display: none;
+	background: white;
+	padding: 20px;
+}
+
+#edit-marker h2 {
+	margin-bottom: 10px;
+}
+
+#edit-marker .title {
+	color: #aaa;
+}
+
+#edit-marker label.title {
+	display: block;
+	font-size: 14px;
+	color: #666;
+}
+
+#edit-marker select, textarea {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+#edit-marker textarea {
+	font-size: 14px;
+	outline: none;
+	box-shadow: none;
+	height: 80px;
+	line-height: 20px;
+}
+
+/* Save Bar */
+
+#save {
+	border: 1px solid #ddd;
+	margin: 20px;
+	padding: 10px;
+}
+
+#save .title {
+	margin: 0;
+}
+
+#save .buttons {
+}
+
+#save .buttons a {
+	float: left;
+	width: 50%;
+}
+
+#save .title {
+	color: #aaa;
+	text-align: center;
+}
+
+#share-code {
+}
+
+#share-code p {
+	font-size: 12px;
+	margin: 0;
+}
+
+#share-code textarea {
+	color: #666;
+	height: 80px;
+	width: 100%;
+}
+
+/* Animations */
+
+@-webkit-keyframes placing-animation {
+  0%      { background-position: 0px 0px; }
+  100% {    background-position: -2400px 0px; }
+}
