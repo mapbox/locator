@@ -135,7 +135,7 @@ a:hover {
 
 .title {
 	font-family: 'Open Sans Condensed', sans-serif;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 600;
 	text-transform: uppercase;
 }
@@ -143,17 +143,18 @@ a:hover {
 /* Buttons */
 
 a.button {
-	background: rgba(56,135,190,1);
+	background: rgba(173,191,190,1);
+	border-radius: 2px;
 	color: white;
 	font-family: 'Open Sans Condensed', sans-serif;
-	font-size: 18px;
-	padding: 15px;
+	font-size: 16px;
+	padding: 8px 12px;
 	text-align: center;
 	text-transform: uppercase;
 }
 
 a.button:hover {
-	background: rgba(59,178,208,1);
+	background: rgba(143,173,172,1);
 }
 
 a.button.active {
@@ -162,14 +163,14 @@ a.button.active {
 
 /* Gray Button */
 
-a.button.gray {
-	background: rgba(76,80,81,1);
+a.button.blue {
+	background: rgba(59,178,208,1);
 }
-a.button.gray:hover {
-	background: rgba(58,62,63,1);
+a.button.blue:hover {
+	background: rgba(48,151,176,1)
 }
-a.button.active {
-	background: rgba(38,42,43,1) !important;
+a.button.blue.active {
+	background: rgba(35,126,141,1);
 }
 
 /* Red Button */
@@ -229,7 +230,7 @@ a.button.red:active, a.button.red:active {
 
 #content a.button.block {
 	display: block;
-	margin-bottom: 20px;
+	margin-bottom: 12px;
 }
 
 /* Map Styles */
@@ -285,16 +286,6 @@ a.button.red:active, a.button.red:active {
 	margin-bottom: 10px;
 }
 
-#edit-marker .title {
-	color: #aaa;
-}
-
-#edit-marker label.title {
-	display: block;
-	font-size: 14px;
-	color: #666;
-}
-
 #edit-marker select, textarea {
 	width: 100%;
 	margin-bottom: 20px;
@@ -311,25 +302,36 @@ a.button.red:active, a.button.red:active {
 /* Save Bar */
 
 #save {
-	border: 1px solid #ddd;
-	margin: 20px;
-	padding: 10px;
+	background: #F4F4F4;
+	border-top: 1px solid #ccc;	
+	border-bottom: 1px solid #ccc;
+	padding: 10px 20px 20px;
 }
 
 #save .title {
-	margin: 0;
-}
-
-#save .buttons {
+	color: #333;
+	margin: 0 0 10px;
 }
 
 #save .buttons a {
+	background: #ddd;
+	color: #666 !important;
+	border-radius: 0px;
 	float: left;
-	width: 50%;
+	color: rgba(59,178,208,1);
+	width: 140px;
+}
+#save .buttons a:hover {
+	background: rgba(59,178,208,1);
+	color: white !important;
 }
 
+#save .buttons a:first-child {
+	border-right: 2px solid #F4F4F4;
+}
+
+
 #save .title {
-	color: #aaa;
 	text-align: center;
 }
 
