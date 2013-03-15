@@ -19,79 +19,85 @@
 
 	<div id="content">
 	    
-		<div id="markers">
-			<div id="basic-controls">
+		<div id="controls">
+			<div id="basic-controls" class="pad">
 
 				<a href="#" id="add-marker" class="icon-marker button blue block" data-nofollow>Add marker</a>
 				<a href="#" id="show-all" class="button blue block show-all" data-nofollow>Center map</a>
 
-				<div id="map-size">
-					<input type="radio" name="size" id="size-large" checked value="large" data-size="610" />
-					<label for="size-large">Large (610px)</label>
-					<input type="radio" name="size" id="size-small" value="small" data-size="296" />
-					<label for="size-small">Small (296px)</label>
+				<div id="map-size" class="box">
+					<h3>SIZE <span>(px)</h3>
+					<input type="text" id="map-width" placeholder="width" />
+					<span class="x">X</span>
+
+					<input type="text" id="map-height" placeholder="height" />
 				</div>
 			</div>
 
 			<div id="adding-marker" class="hide">
-				<p class="info">Click and hold to place a marker on the map.</p>
-				<a href="#" id="cancel-marker" class="button small" data-nofollow>Cancel</a>
+				<h2 class="title">Place marker</h2>
+				<div class="pad">
+					<p class="info">Click and hold to place a marker on the map.</p>
+					<a href="#" id="cancel-marker" class="button block" data-nofollow>Cancel</a>
+				</div>
 			</div>
 
 			<div id="edit-marker" class="clearfix hide">
 				<h2 class="title">Edit marker</h2>
-
-				<fieldset>
-					<label for="color" class="title">Color</label>
-					<select name="color" id="marker-color">
-						<option value="000000" selected>Black</option>
-						<option value="3178b5">Blue</option>
-						<option value="dc463f">Red</option>
-						<option value="5ea154">Green</option>
-						<option value="f8b44e">Orange</option>
-					</select>
-				</fieldset>
-
-				<fieldset>
-					<label for="icon" class="title">Icon</label>
-					<select name="icon" id="marker-icon">
-						<!-- Markers load here -->
-					</select>
-				</fieldset>
-
-				<fieldset>
-					<label for="marker-content" class="title">Tooltip Content</label>
-					<textarea name="marker-content" id="" rows="3" placeholder="(HTML is allowed)"></textarea>
-				</fieldset>
-
 				
-				<a href="#" id="delete-marker" class="button red small" data-nofollow>Delete</a>
-				<a href="#" id="save-marker" class="button small" data-nofollow>Save</a>
+				<div class="pad clearfix">
+					<fieldset class="clearfix">
+						<label for="color" class="left">Color</label>
+						<select name="color" id="marker-color">
+							<option value="000000" selected>Black</option>
+							<option value="3178b5">Blue</option>
+							<option value="dc463f">Red</option>
+							<option value="5ea154">Green</option>
+							<option value="f8b44e">Orange</option>
+						</select>
+					</fieldset>
+
+					<fieldset class="clearfix">
+						<label for="icon" class="left">Icon</label>
+						<select name="icon" id="marker-icon">
+							<!-- Markers load here -->
+						</select>
+					</fieldset>
+
+					<fieldset>
+						<label for="marker-content">Tooltip Content</label>
+						<textarea name="marker-content" id="" rows="3" placeholder="(HTML is allowed)"></textarea>
+					</fieldset>
+					
+					<a href="#" id="delete-marker" class="button" data-nofollow>Delete</a>
+					<a href="#" id="save-marker" class="button blue" data-nofollow>Save</a>
+				</div>
 				
 			</div>
 		</div>
-
 		
 		<!-- Sharing Options -->
 		<div id="save" class="clearfix">
 			<h3 class="title">Share</h3>
-			<div class="buttons">
+			<div class="buttons clearfix">
 				<a href="#" id="generate-image" class="button icon-download" data-nofollow>Image</a>
 				<a href="#" id="generate-embed" class="button icon-embed" data-nofollow>Embed</a>
 			</div>
-		</div>
-		<div id="share-code" class="container hide">
-			
-			<p>Copy and paste the following HTML:</p>
-			<textarea id="generate-result"></textarea>
-			
-		</div>
 
+			<div id="share-code" class="hide">
+				
+				<p>Copy and paste the following HTML:</p>
+				<textarea id="generate-result"></textarea>
+				
+			</div>
+
+		</div>
 
 	</div>
-
 	
-	<div id="map" class="map" data-id="examples.map-vyofok3q"><!-- Load MapBox Map--></div>
+	<div id="map-wrapper" class="no-box-size">
+		<div id="map" class="map" data-id="examples.map-vyofok3q"><!-- Load MapBox Map--></div>
+	</div>
 	
 
 

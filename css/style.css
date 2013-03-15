@@ -45,6 +45,7 @@ table {
 
 /* apply a natural box layout model to all elements */
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.no-box-size { -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
 
 .clearfix:after {
 	content:'.';
@@ -216,6 +217,7 @@ a.button.red:active, a.button.red:active {
 }
 
 #content {
+	border-left: 1px solid #aaa;
 	position: absolute;
 	top: 50px;
 	right: 0px;
@@ -234,6 +236,13 @@ a.button.red:active, a.button.red:active {
 }
 
 /* Map Styles */
+
+#map-wrapper {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 0;
+}
 
 .map {
 	background: rgba(232,224,216,1);
@@ -261,35 +270,74 @@ a.button.red:active, a.button.red:active {
 /* Controls bar */
 
 #map-size {
-	background: rgba(256,256,256,0.9);
 	text-align: center;
-	padding: 10px 5px;
 	font-size: 12px;
 }
 
-#map-size label {
-	margin-right: 15px;
-}
-
 /* Markers Editing */
-#markers {
+
+#controls {
+}
+
+#controls .pad {
 	padding: 20px;
 }
 
-#markers #edit-marker {
-	display: none;
-	background: white;
-	padding: 20px;
+
+#controls h2 {
+	background: #F4F4F4;
+	padding: 10px;
+	border-bottom: 1px solid #ccc;
 }
 
-#edit-marker h2 {
+#controls .box {
+	border: 1px solid #ccc;
+	padding: 0 0 10px;
+}
+
+#controls .box h3 {
+	border-bottom: 1px solid #ccc;
 	margin-bottom: 10px;
+	padding: 5px;
 }
 
-#edit-marker select, textarea {
+#controls .box input {
+	text-align: center;
+	width: 100px;
+}
+
+#controls .box span.x {
+	color: #aaa;
+	font-size: 16px;
+	padding: 0 8px;
+}
+
+#edit-marker fieldset {
+	padding: 10px 0;
+}
+
+#edit-marker label {
+	color: #868989;
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+#edit-marker label.left {
+	float: left;
+	width: 90px;
+}
+
+#edit-marker select {
+	float: right;
+	width: 180px;
+}
+
+#edit-marker textarea {
 	width: 100%;
 	margin-bottom: 20px;
 }
+
 
 #edit-marker textarea {
 	font-size: 14px;
@@ -297,6 +345,21 @@ a.button.red:active, a.button.red:active {
 	box-shadow: none;
 	height: 80px;
 	line-height: 20px;
+	padding: 8px;
+}
+
+#edit-marker .button {
+	display: inline-block;
+}
+
+#edit-marker #delete-marker {
+	float: left;
+	width: 90px;
+}
+
+#edit-marker #save-marker {
+	float: right;
+	width: 180px;
 }
 
 /* Save Bar */
@@ -305,7 +368,11 @@ a.button.red:active, a.button.red:active {
 	background: #F4F4F4;
 	border-top: 1px solid #ccc;	
 	border-bottom: 1px solid #ccc;
+	bottom: 0px;
 	padding: 10px 20px 20px;
+	position: absolute;
+	right: 0px;
+	width: 320px;
 }
 
 #save .title {
@@ -336,6 +403,7 @@ a.button.red:active, a.button.red:active {
 }
 
 #share-code {
+	margin: 20px 0;
 }
 
 #share-code p {
