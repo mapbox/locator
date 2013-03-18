@@ -3,7 +3,7 @@ MapBox Locator
 
 A widget builder for creating simple locator maps placing one or more markers on a [MapBox](http://www.mapbox.com) map.
 
-![Screenshot](http://i.imgur.com/GIbvJuj.png)
+![Screenshot](http://i.imgur.com/CkZToYl.jpg)
 
 ---
 

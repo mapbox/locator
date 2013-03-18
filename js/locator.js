@@ -48,7 +48,8 @@ var maki = ['','circle', 'circle-stroked', 'square', 'square-stroked', 'triangle
       'click #cancel-marker': 'toggleCancelMarker',
       'click .show-all': 'showAll',
       'click #generate-image': 'generateImage',
-      'click #generate-embed': 'generateEmbed'
+      'click #generate-embed': 'generateEmbed',
+      'change .change-size': 'changeMapSize'
     },
 
     initialize: function(){
@@ -63,7 +64,7 @@ var maki = ['','circle', 'circle-stroked', 'square', 'square-stroked', 'triangle
         'placeMarker',
         'renderMap',
         'showAll',
-        'showError',
+        'toggleError',
         'toggleAddingMarker',
         'toggleCancelMarker',
         'toggleEditScreen',
@@ -71,17 +72,11 @@ var maki = ['','circle', 'circle-stroked', 'square', 'square-stroked', 'triangle
         'updateMarker'
       );
 
-      this.model.on('change:mapWidth', this.changeMapSize);
       this.model.on('change:activeMarker', this.toggleEditScreen);
 
-      var mapId = getURLParameter('mapid').replace("/","");
-
-      if(mapId === 'null') {
-        this.showError('<strong>Missing MapBox Map ID in URL.</strong><br/>Ex: ' + window.location.pathname + '?mapid=examples.map-vyofok3q');
-        return false;
-      } else {
-        this.model.set('mapId', mapId);
-      }
+      // Insert your Map ID here
+      var mapId = 'examples.map-vyofok3q';
+      this.model.set('mapId', mapId);
 
       this.model.set('coords',{
         lat: '38.91',
@@ -128,12 +123,20 @@ var maki = ['','circle', 'circle-stroked', 'square', 'square-stroked', 'triangle
     },
 
     changeMapSize: function() {
-      var width = this.model.get('mapWidth'),
-          coords = this.model.get('coords'),
-          $wrapper = $('#map-wrapper');
+      var width = $('#map-width').val(),
+          height = $('#map-height').val();
 
-      $wrapper.css('width',width + 'px');
-      this.map.dimensions.x = $wrapper.width();
+      this.model.set('mapWidth',width);
+      this.model.set('mapHeight',height);
+
+      $('#map-wrapper').css({
+        'width' : width,
+        'height': height
+      });
+
+      this.map.dimensions.x = width;
+      this.map.dimensions.y = height;
+      this.map.center();
       this.map.draw();
     },
 
@@ -205,6 +208,11 @@ var maki = ['','circle', 'circle-stroked', 'square', 'square-stroked', 'triangle
 
       var requestString = apiString + urlString + '/' + mapWidth + 'x' + mapHeight + '.png';
 
+      if(mapWidth > 640 || mapHeight > 640) {
+        this.toggleError('<strong>Whoops!</strong> Map must be smaller than 640 x 640 to generate an image.');
+        return false;
+      } else this.toggleError();
+
       $('#share-code').slideDown('fast');
       $('#generate-result').val(requestString).select();
 
@@ -215,10 +223,18 @@ var maki = ['','circle', 'circle-stroked', 'square', 'square-stroked', 'triangle
           lon = this.map.center().lon,
           lat = this.map.center().lat;
           zoom = this.map.zoom(),
-          mapWidth = this.map.dimensions.x,
-          mapHeight = this.map.dimensions.y,
+          mapWidth = this.model.get('mapWidth'),
+          mapHeight = this.model.get('mapHeight'),
           $container = $('<div></div>'),
           $mapContainer = $('<div class="mapbox-map"></div>');
+
+      if(mapWidth === undefined || mapWidth === '') {
+        mapWidth = '100%';
+      } else mapWidth += 'px';
+
+      if(mapHeight === undefined || mapHeight === '') {
+        mapHeight = '100%';
+      } else mapHeight +='px';
 
       $mapContainer
         .attr({
@@ -406,8 +422,12 @@ var maki = ['','circle', 'circle-stroked', 'square', 'square-stroked', 'triangle
       }
     },
 
-    showError: function(message) {
-      $('#error').show().html(message);
+    toggleError: function(message) {
+      if( message === undefined) {
+        $('#error').hide();
+      } else {
+        $('#error').show().html(message); 
+      }
     },
 
     toggleAddingMarker: function() {

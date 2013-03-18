@@ -1,0 +1,428 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+    }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+    }
+body {
+	line-height: 1;
+    }
+ol, ul {
+	list-style: none;
+    }
+blockquote, q {
+	quotes: none;
+    }
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+    }
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+    }
+
+
+/* apply a natural box layout model to all elements */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.no-box-size { -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+
+.clearfix:after {
+	content:'.';
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+}
+
+/* Typography */
+
+body,
+input,
+textarea {
+    font: 16px/24px 'DroidSerifRegular', sans-serif;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    }
+
+pre,
+code { font:normal 12px/20px monospace; }
+    
+h1, h2 {
+    font: .75em/1em 'DroidSansBold', sans-serif;
+    text-transform: uppercase;
+    }
+
+a {
+    color:#369;
+    text-decoration:none;
+    }
+
+/* Layout */
+
+h1,h2 {
+    padding: 20px 0;
+    text-align: center;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+body > div {
+    position: relative;
+    z-index: 1;
+}
+    
+body {
+	background: #fff;
+	font-family: 'Open Sans', sans-serif;
+}
+
+a {
+	color: rgba(56,135,190,1);
+}
+
+a:hover {
+	color: rgba(59,178,208,1);
+}
+
+/* General Selectors */
+
+[class*="icon-"]:before {
+	margin-right: 10px;
+}
+
+#placing {
+	-webkit-animation: placing-animation 0.8s 1 steps(24);
+	background-image: url(../images/placing.png);
+	background-size: 1200px 50px;
+	background-position: 0px 0px;
+	height: 50px;
+	position: absolute;
+	width: 50px;
+	z-index: 10;
+}
+
+.hide {
+	display: none;
+}
+
+
+.tiny {
+	color: #222;
+	font-size: 12px;
+}
+
+.title {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+/* Buttons */
+
+a.button {
+	background: rgba(173,191,190,1);
+	border-radius: 2px;
+	color: white;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 16px;
+	padding: 8px 12px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+a.button:hover {
+	background: rgba(143,173,172,1);
+}
+
+a.button.active {
+	box-shadow: inset 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* Gray Button */
+
+a.button.blue {
+	background: rgba(59,178,208,1);
+}
+a.button.blue:hover {
+	background: rgba(48,151,176,1)
+}
+a.button.blue.active {
+	background: rgba(35,126,141,1);
+}
+
+/* Red Button */
+
+a.button.red {
+	background: rgba(181,14,63,1);
+}
+a.button.red {
+	background: rgba(212,63,63,1); 
+}
+a.button.red:hover {
+	background: rgba(196,51,51,1); 
+}
+a.button.red:active, a.button.red:active {  
+	background: rgba(175,40,40,1); 
+}
+
+/* Sections */
+
+#header {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 320px;
+    height: 50px;	
+    background: #444;
+    color: white;
+	z-index: 2;
+}
+
+#header h1 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+}
+
+#error {
+	background: rgba(219,69,62,0.9);
+	color: white;
+	font-family: 'Open Sans Condensed',Arial,sans-serif;
+	/*margin: -20px 0 20px;*/
+	margin: 0 20px;
+	padding: 20px;
+	text-align: center;
+}
+
+#content {
+	border-left: 1px solid #aaa;
+	position: absolute;
+	top: 50px;
+	right: 0px;
+	bottom: 0px;
+	padding: 0;
+	width: 320px;
+	background: rgb(255,255,255); /* old IE */
+	background: rgba(255,255,255,.9);
+	overflow-x: auto;
+	z-index: 2;
+}
+
+#content a.button.block {
+	display: block;
+	margin-bottom: 12px;
+}
+
+/* Map Styles */
+
+#map-wrapper {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 0;
+}
+
+.map {
+	background: rgba(232,224,216,1);
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	z-index: 0;
+}
+
+#map .marker-popup {
+	font-size: 14px;
+	padding: 5px 10px;
+	max-width: 240px;
+}
+
+#map .marker-popup a {
+	color: #3178b5;
+	font-weight: 600;
+}
+
+#map .marker-popup a:hover {
+	color: black;
+}
+
+/* Controls bar */
+
+#map-size {
+	text-align: center;
+	font-size: 12px;
+}
+
+/* Markers Editing */
+
+#controls {
+}
+
+#controls .pad {
+	padding: 20px;
+}
+
+
+#controls h2 {
+	background: #F4F4F4;
+	padding: 10px;
+	border-bottom: 1px solid #ccc;
+}
+
+#controls .box {
+	border: 1px solid #ccc;
+	padding: 0 0 10px;
+}
+
+#controls .box h3 {
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 10px;
+	padding: 5px;
+}
+
+#controls .box input {
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	text-transform: uppercase;
+	width: 100px;
+}
+
+#controls .box span.x {
+	color: #aaa;
+	font-size: 16px;
+	padding: 0 8px;
+}
+
+#edit-marker fieldset {
+	padding: 10px 0;
+}
+
+#edit-marker label {
+	color: #868989;
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+#edit-marker label.left {
+	float: left;
+	width: 90px;
+}
+
+#edit-marker select {
+	float: right;
+	width: 180px;
+}
+
+#edit-marker textarea {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+
+#edit-marker textarea {
+	font-size: 14px;
+	outline: none;
+	box-shadow: none;
+	height: 80px;
+	line-height: 20px;
+	padding: 8px;
+}
+
+#edit-marker .button {
+	display: inline-block;
+}
+
+#edit-marker #delete-marker {
+	float: left;
+	width: 90px;
+}
+
+#edit-marker #save-marker {
+	float: right;
+	width: 180px;
+}
+
+/* Save Bar */
+
+#save {
+	background: #F4F4F4;
+	border-top: 1px solid #ccc;	
+	border-bottom: 1px solid #ccc;
+	bottom: 0px;
+	padding: 10px 20px 20px;
+	position: absolute;
+	right: 0px;
+	width: 320px;
+}
+
+#save .title {
+	color: #333;
+	margin: 0 0 10px;
+}
+
+#save .buttons a {
+	background: #ddd;
+	color: #666 !important;
+	border-radius: 0px;
+	float: left;
+	color: rgba(59,178,208,1);
+	width: 140px;
+}
+#save .buttons a:hover {
+	background: rgba(59,178,208,1);
+	color: white !important;
+}
+
+#save .buttons a:first-child {
+	border-right: 2px solid #F4F4F4;
+}
+
+
+#save .title {
+	text-align: center;
+}
+
+#share-code {
+	margin: 20px 0;
+}
+
+#share-code p {
+	font-size: 12px;
+	margin: 0;
+}
+
+#share-code textarea {
+	color: #666;
+	height: 80px;
+	width: 100%;
+}
+
+/* Animations */
+
+@-webkit-keyframes placing-animation {
+  0%      { background-position: 0px 0px; }
+  100% {    background-position: -2400px 0px; }
+}
