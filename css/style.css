@@ -208,11 +208,12 @@ a.button.red:active, a.button.red:active {
 }
 
 #error {
-	background: #DB453E;
+	background: rgba(219,69,62,0.9);
 	color: white;
 	font-family: 'Open Sans Condensed',Arial,sans-serif;
-	margin: -20px 0 20px;
-	padding: 20px 0;
+	/*margin: -20px 0 20px;*/
+	margin: 0 20px;
+	padding: 20px;
 	text-align: center;
 }
 
@@ -302,7 +303,10 @@ a.button.red:active, a.button.red:active {
 }
 
 #controls .box input {
+	font-size: 14px;
+	font-weight: bold;
 	text-align: center;
+	text-transform: uppercase;
 	width: 100px;
 }
 

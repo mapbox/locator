@@ -48,7 +48,8 @@ var maki = ['','circle', 'circle-stroked', 'square', 'square-stroked', 'triangle
       'click #cancel-marker': 'toggleCancelMarker',
       'click .show-all': 'showAll',
       'click #generate-image': 'generateImage',
-      'click #generate-embed': 'generateEmbed'
+      'click #generate-embed': 'generateEmbed',
+      'change .change-size': 'changeMapSize'
     },
 
     initialize: function(){
@@ -63,7 +64,7 @@ var maki = ['','circle', 'circle-stroked', 'square', 'square-stroked', 'triangle
         'placeMarker',
         'renderMap',
         'showAll',
-        'showError',
+        'toggleError',
         'toggleAddingMarker',
         'toggleCancelMarker',
         'toggleEditScreen',
@@ -71,7 +72,7 @@ var maki = ['','circle', 'circle-stroked', 'square', 'square-stroked', 'triangle
         'updateMarker'
       );
 
-      this.model.on('change:mapWidth', this.changeMapSize);
+      // this.model.on('change:mapWidth', this.changeMapSize);
       this.model.on('change:activeMarker', this.toggleEditScreen);
 
       // Insert your Map ID here
@@ -122,11 +123,20 @@ var maki = ['','circle', 'circle-stroked', 'square', 'square-stroked', 'triangle
     },
 
     changeMapSize: function() {
-      var width = this.model.get('mapWidth'),
-          coords = this.model.get('coords');
+      var width = $('#map-width').val(),
+          height = $('#map-height').val();
 
-      // $wrapper.css('width',width + 'px');
+      this.model.set('mapWidth',width);
+      this.model.set('mapHeight',height);
+
+      $('#map-wrapper').css({
+        'width' : width,
+        'height': height
+      });
+
       this.map.dimensions.x = width;
+      this.map.dimensions.y = height;
+      this.map.center();
       this.map.draw();
     },
 
@@ -197,6 +207,11 @@ var maki = ['','circle', 'circle-stroked', 'square', 'square-stroked', 'triangle
           mapHeight = this.map.dimensions.y;
 
       var requestString = apiString + urlString + '/' + mapWidth + 'x' + mapHeight + '.png';
+
+      if(mapWidth > 640 || mapHeight > 640) {
+        this.toggleError('<strong>Whoops!</strong> Map must be smaller than 640 x 640 to generate an image.');
+        return false;
+      } else this.toggleError();
 
       $('#share-code').slideDown('fast');
       $('#generate-result').val(requestString).select();
@@ -399,8 +414,13 @@ var maki = ['','circle', 'circle-stroked', 'square', 'square-stroked', 'triangle
       }
     },
 
-    showError: function(message) {
-      $('#error').show().html(message);
+    toggleError: function(message) {
+      console.log(message);
+      if( message === undefined) {
+        $('#error').hide();
+      } else {
+        $('#error').show().html(message); 
+      }
     },
 
     toggleAddingMarker: function() {

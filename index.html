@@ -27,10 +27,10 @@
 
 				<div id="map-size" class="box">
 					<h3>SIZE <span>(px)</h3>
-					<input type="text" id="map-width" placeholder="width" />
+					<input type="number" id="map-width" placeholder="width" class="change-size" />
 					<span class="x">X</span>
 
-					<input type="text" id="map-height" placeholder="height" />
+					<input type="number" id="map-height" placeholder="height" class="change-size" />
 				</div>
 			</div>
 
@@ -75,6 +75,8 @@
 				
 			</div>
 		</div>
+
+		<div id="error" class="hide"></div>
 		
 		<!-- Sharing Options -->
 		<div id="save" class="clearfix">
