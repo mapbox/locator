@@ -77,7 +77,7 @@
 		    
 			var $m = $(this),
 		    	mapid = $m.data('mapid'),
-		    	$newMapContainer = $('<div style="width:' + $m.data('width') + 'px; height:' + $m.data('height') + 'px; position: relative"></div>'),
+		    	$newMapContainer = $('<div style="width:' + $m.data('width') + '; height:' + $m.data('height') + '; position: relative"></div>'),
 		    	$newMap = $('<div id="map-' + i + '" class="mbmap"></div>');
 
 		  $newMap.css({'position':'absolute', 'top':'0', 'bottom':'0', 'width':'100%' });
@@ -125,7 +125,7 @@
 
 			// Additional CSS - inherits most styles from body, but want to ensure tooltips look halfway decent
 			$("<style>").text('' +
-				'.marker-popup { font-family: Arial, sans-serif; max-width: 240px; padding: 10px; font-size: 12px; line-height: 16px; }' +
+				'.marker-popup { font-family: Arial, sans-serif; max-width: 240px; padding: 10px; font-size: 14px; line-height: 16px; }' +
 				'.marker-popup a { text-decoration: none; }' +
 			'').appendTo("head");
 

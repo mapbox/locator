@@ -15,7 +15,6 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
 	vertical-align: baseline;
     }
 /* HTML5 display-role reset for older browsers */
@@ -254,7 +253,7 @@ a.button.red:active, a.button.red:active {
 }
 
 #map .marker-popup {
-	font-size: 12px;
+	font-size: 14px;
 	padding: 5px 10px;
 	max-width: 240px;
 }

@@ -72,11 +72,11 @@ var maki = ['','circle', 'circle-stroked', 'square', 'square-stroked', 'triangle
         'updateMarker'
       );
 
-      // this.model.on('change:mapWidth', this.changeMapSize);
       this.model.on('change:activeMarker', this.toggleEditScreen);
 
       // Insert your Map ID here
-      var mapId = $('#map').data('id');
+      var mapId = 'examples.map-vyofok3q';
+      this.model.set('mapId', mapId);
 
       this.model.set('coords',{
         lat: '38.91',
@@ -223,10 +223,18 @@ var maki = ['','circle', 'circle-stroked', 'square', 'square-stroked', 'triangle
           lon = this.map.center().lon,
           lat = this.map.center().lat;
           zoom = this.map.zoom(),
-          mapWidth = this.map.dimensions.x,
-          mapHeight = this.map.dimensions.y,
+          mapWidth = this.model.get('mapWidth'),
+          mapHeight = this.model.get('mapHeight'),
           $container = $('<div></div>'),
           $mapContainer = $('<div class="mapbox-map"></div>');
+
+      if(mapWidth === undefined || mapWidth === '') {
+        mapWidth = '100%';
+      } else mapWidth += 'px';
+
+      if(mapHeight === undefined || mapHeight === '') {
+        mapHeight = '100%';
+      } else mapHeight +='px';
 
       $mapContainer
         .attr({
@@ -415,7 +423,6 @@ var maki = ['','circle', 'circle-stroked', 'square', 'square-stroked', 'triangle
     },
 
     toggleError: function(message) {
-      console.log(message);
       if( message === undefined) {
         $('#error').hide();
       } else {
