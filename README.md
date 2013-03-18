@@ -37,7 +37,7 @@ The map is configured in `js/locator.js` and takes advantage of many [MapBox Jav
 features - so the documentation for the MapBox Javascript API applies to every part
 of this site.
 
-In addition to Mapbox JS, Locator utilizes both (Backbone.js)[http://backbonejs.org/] and jQuery. 
+In addition to Mapbox JS, Locator utilizes both [Backbone.js](http://backbonejs.org/) and jQuery. 
 
 The latest embed code is [hosted by Mapbox](http://www.mapbox.com/locator/embed.js), but the unminified version is included here in `embed.unmin.js` for any additional features you may want.
 
