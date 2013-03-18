@@ -1,6 +1,6 @@
 # Locator
 
-The template demonstrates a widget for creating and sharing simple [MapBox](http://www.mapbox.com) maps with one or more markers.
+This template demonstrates a widget for creating and sharing simple [MapBox](http://www.mapbox.com) maps with one or more markers.
 
 To make your custom base map, [sign up for MapBox](http://mapbox.com/plans/) and [create a map](http://mapbox.com/hosting/creating/).
 
@@ -20,7 +20,7 @@ the main markup document with the content and layout for the map-site.
 Adjust the design by editing the `style.css` file and adding any additional
 supporting structure to `index.html`.
 
-Set your map id, and (any additional features)[http://mapbox.com/developers/mapbox.js/], inside the initialize and renderMap() functions.
+Set your map id, and [any additional features](http://mapbox.com/developers/mapbox.js/), inside the initialize and renderMap() functions.
 
 ```javascript
 // Insert your Map ID here
