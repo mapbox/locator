@@ -226,7 +226,7 @@ a.button.red:active, a.button.red:active {
 	width: 320px;
 	background: rgb(255,255,255); /* old IE */
 	background: rgba(255,255,255,.9);
-	overflow-x: auto;
+	overflow: hidden;
 	z-index: 2;
 }
 
