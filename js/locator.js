@@ -201,7 +201,7 @@ var maki = ['','circle', 'circle-stroked', 'square', 'square-stroked', 'triangle
 
     generateImage: function() {
 
-      var apiString = 'http://api.tiles.mapbox.com/v3/',
+      var apiString = 'https://api.tiles.mapbox.com/v3/',
           urlString = this.generateUrlString(),
           mapWidth = this.map.dimensions.x,
           mapHeight = this.map.dimensions.y;
@@ -349,7 +349,7 @@ var maki = ['','circle', 'circle-stroked', 'square', 'square-stroked', 'triangle
           model = this.model;
 
       this.map = mapbox.map('map');
-      this.map.addLayer(mapbox.layer().id(mapId));
+      this.map.addLayer(mapbox.layer().url('https://a.tiles.mapbox.com/v3/' + mapId + '.jsonp?secure'));
 
       // Create an empty markers layer
       this.markerLayer = mapbox.markers.layer().factory(function(f) {
