@@ -17,7 +17,7 @@
 		link.id   = mapboxCSS;
 		link.rel  = 'stylesheet';
 		link.type = 'text/css';
-		link.href = 'http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css';
+		link.href = 'https://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css';
 		link.media = 'all';
 		head.appendChild(link);
 	}
@@ -97,7 +97,7 @@
 				lat: $m.data('lat')
 			});
 			map.ui.zoomer.add();
-			map.ui.attribution.add().content('<a href="http://mapbox.com/about/maps" style="font-family: Arial,sans-serif; color: #666; text-decoration:">Terms &amp; Feedback</a>');
+			map.ui.attribution.add().content('<a href="https://mapbox.com/about/maps" style="font-family: Arial,sans-serif; color: #666; text-decoration:">Terms &amp; Feedback</a>');
 		  mapbox.markers.interaction(markerLayer);
 			
 			// Add markers

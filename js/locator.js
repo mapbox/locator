@@ -20,7 +20,7 @@ function getURLParameter(name) {
 }
 
 // ----------------------------------------------------------------------------
-// Icons: http://www.mapbox.com/maki
+// Icons: https://www.mapbox.com/maki
 
 var maki = ['','circle', 'circle-stroked', 'square', 'square-stroked', 'triangle', 'triangle-stroked', 'star', 'star-stroked', 'cross', 'marker', 'marker-stroked', 'religious-jewish', 'religious-christian', 'religious-muslim', 'cemetery', 'airport', 'heliport', 'rail', 'rail-underground', 'rail-above', 'bus', 'fuel', 'parking', 'parking-garage', 'london-underground', 'airfield', 'roadblock', 'ferry', 'harbor', 'bicycle', 'park', 'park2', 'museum', 'lodging', 'monument', 'zoo', 'garden', 'campsite', 'theatre', 'art', 'pitch', 'soccer', 'america-football', 'tennis', 'basketball', 'baseball', 'golf', 'swimming', 'cricket', 'skiing', 'school', 'college', 'library', 'post', 'fire-station', 'town-hall', 'police', 'prison', 'embassy', 'beer', 'restaurant', 'cafe', 'shop', 'fast-food', 'bar', 'bank', 'grocery', 'cinema', 'pharmacy', 'hospital', 'minefield', 'industrial', 'warehouse', 'commercial', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
 
@@ -403,7 +403,7 @@ var maki = ['','circle', 'circle-stroked', 'square', 'square-stroked', 'triangle
       this.map.ui.zoomer.add();
       this.map.ui.zoombox.add();
       this.map.ui.attribution.add()
-          .content('<a href="http://mapbox.com/about/maps">Terms &amp; Feedback</a>');
+          .content('<a href="https://mapbox.com/about/maps">Terms &amp; Feedback</a>');
       
       this.map.zoom(12).center(coords);
     },
