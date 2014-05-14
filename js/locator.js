@@ -75,7 +75,7 @@ var maki = ['','circle', 'circle-stroked', 'square', 'square-stroked', 'triangle
       this.model.on('change:activeMarker', this.toggleEditScreen);
 
       // Insert your Map ID here
-      var mapId = 'examples.map-vyofok3q';
+      var mapId = 'examples.map-i86l3621';
       this.model.set('mapId', mapId);
 
       this.model.set('coords',{

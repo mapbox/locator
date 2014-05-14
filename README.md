@@ -24,7 +24,7 @@ Set your map id, and [any additional features](http://mapbox.com/developers/mapb
 
 ```javascript
 // Insert your Map ID here
-var mapId = 'examples.map-vyofok3q';
+var mapId = 'examples.map-i86l3621';
 ```
 
 ## CSS styles
